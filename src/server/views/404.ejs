@@ -1,0 +1,55 @@
+<%- include ('partials/header', {tituloWeb: '404 - NOT FOUND' }) -%>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@500&display=swap" rel="stylesheet">
+
+
+    <body style="background-color: #000cac;">
+
+        <div class="container d-flex justify-content-center align-items-center py-4">
+
+            <div class="text-center p-5 mx-5">
+
+                <h1 style="background-color: #acacac; color: #000cac; font-family: 'Handjet', cursive;"
+                    class="d-inline-block border p-2"> 404 - NOT FOUND
+                    :(</h1>
+            </div>
+
+        </div>
+
+        <div class="container d-flex justify-content-center align-items-center py-3">
+            
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+
+                <h3 style="color: #acacac; font-family: 'Handjet', cursive;">
+                    Un error a ocurrido, no se encontro la dirección solicitada...</h3>
+
+                <ul style="color: #acacac; font-family: 'Handjet', cursive; list-style-type: none; padding-left: 0;">
+                    <li><h3>*Redireccionando a la página inicial en <span id="countdown">3</span> segundos...</h3></li>                    
+                    <li><h3>*Disculpe el inconveniente c:</h3></li>
+                </ul>
+
+            </div>
+        </div>
+
+    </body>
+
+    <script>
+        const countdownElement = document.getElementById('countdown');
+        let countdown = 3; // Tiempo de espera en segundos
+    
+        function updateCountdown() {
+            countdownElement.textContent = countdown;
+            countdown--;
+    
+            if (countdown >= 0) {
+                setTimeout(updateCountdown, 1000); // Actualizar cada segundo
+            } else {
+                window.location.href = `/index`; // Redireccionar al final del conteo
+            }
+        }
+        updateCountdown();
+    </script>
+
+
+    </html>

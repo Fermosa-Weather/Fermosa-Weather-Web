@@ -1,0 +1,28 @@
+    const [file, setFile] = useState({
+        id_user: id_user,
+    });
+
+    const handleFileInput = (e) => {
+        setFile(file => ({ ...file, url: e.target.files[0] }));
+    }
+
+    const handleInputChange = (e) => {
+        setFile(file => ({ ...file, [e.target.name]: e.target.value }));
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const resp = await fetchFileFunction("createDesc", file)
+        console.log(resp);
+
+        if (!resp.error) {
+            useSweetAlert(resp, "Post creado correctamente", "success")
+                .then(() => {
+                    return navigate("/auth/home")
+                })
+
+        } else {
+            useSweetAlert(resp, null, "error")
+        }
+    }

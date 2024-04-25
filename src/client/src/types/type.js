@@ -1,0 +1,11 @@
+export const types = {
+    LOGIN: 'LOGIN',
+    LOGOUT: 'LOGOUT',
+
+
+
+    ACTIVE_USERS: 'ACTIVE_USERS',
+    ACTIVE_CHAT: 'ACTIVE_CHAT',
+    NEW_MESSAGE: 'NEW_MESSAGE',
+    LOAD_MESSAGES: 'LOAD_MESSAGES',
+}

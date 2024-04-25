@@ -1,0 +1,117 @@
+<%- include ('../partials/header', {tituloWeb: 'Posts' }) -%>
+
+
+  <body class="colorFondo">
+
+    <!-- BARRA DE NAVEGACION-->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light colorPrincipal">
+        <div class="container-fluid">
+          <img src="../img/jun.png" alt="logo" width="30" height="30">
+          <a class="navbar-brand text-light" href="/inicio">Job <span class="unite">Unite</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-light" aria-current="page" href="#">Mensajes</a>
+              </li>
+              <!-- NOTIFICACIONES -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Notificaciones
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="solicitudes">Solicitudes</a></li>
+                  <li><a class="dropdown-item" href="novedades">Novedades</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Seguridad</a></li>
+                </ul>
+              </li>
+            </ul>
+            <!-- FILTROS DE BUSQUEDA -->
+            <li class="nav-item dropdown d-flex px-5">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Filtros
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                <li class="dropdown-item">Rubro</li>
+                <li class="dropdown-item">Localidad</li>
+                <li class="dropdown-item">Edad</li>
+              </ul>
+            </li>
+
+            <!-- BUSCADOR -->
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="¿Que deseas buscar?" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Buscar</button>
+            </form>
+
+            <!-- ICONO USUARIO -->
+            <div class="dropdown p-4">
+              <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../img/icon.png" alt="pfp" width=" 32" height="32" class="rounded-circle me-2">
+                <strong class="text-light" id="UsuarioNombre"> <%= user_name %></strong>
+              </a>
+
+              <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="perfil">Perfil</a></li>
+                <li><a class="dropdown-item" href="#">Ajustes</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><button class="dropdown-item" id="cerrarSesion" type="submit" href="index">Cerrar sesion</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="py-5">
+      <form action="#" id="formPost">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="bg-light p-3 rounded-5" style="border: 1px solid #000;">
+            <!-- Contenido del contenedor -->
+            <div class="d-flex justify-content-center">
+              <img src="../../img/jun.png" alt="login-icon" style="height: 5rem" />
+            </div>
+            <div class="text-center fs-3 fw-bold">Crear un nuevo post</div>
+
+            <div class="input-group mt-1">
+              <h3>Titulo:</h3>
+              <div class="input-group">
+                <input class="form-control" type="text" placeholder="Titulo del post" id="post_title" name="post_title"
+                  required />
+              </div>
+            </div>
+
+            <div class="input-group mt-1">
+              <h3>Contenido:</h3>
+              <div class="input-group">
+                <input class="form-control" type="text" placeholder="Contenido del post" id="post_content"
+                  name="post_content" required />
+              </div>
+            </div>
+
+            <div class="pt-3 text-center">
+              <button type="submit" class="btn btn-primary text-center">Subir</button>
+            </div>
+
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <script src="../../js/post.js"></script>
+
+    <%- include ('../partials/footer') -%>
