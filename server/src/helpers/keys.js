@@ -1,0 +1,1 @@
+export const key="clave2024"

@@ -2,10 +2,13 @@ import {app, port} from "./server.js"
 import {sequelize} from "./src/database/db.js"
 // import {associate} from "./src/asociacion/asociacion.js"
 
-// import {routes_cliente} from './src/routes/routes_client.js';
+import {routes_auth} from './src/routes/routes_auth.js';
+import {routes_correo} from './src/routes/routes_correo.js';
 
 // Routes
-// app.use("/cliente", routes_cliente);
+app.use("/auth", routes_auth);
+app.use("/auth", routes_correo);
+
   // Listen
   app.listen(port, () => {
     console.log(`La app está escuchando en http://localhost:${process.env.PORT}` );
