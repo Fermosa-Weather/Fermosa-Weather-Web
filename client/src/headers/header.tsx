@@ -4,9 +4,10 @@ import "../style/header.css"
 function Header() {
   return (
     <div>
-        <ul>
+      header
+        {/* <ul>
         <li><Link to='/'>Inicio</Link></li>
-        </ul>
+        </ul> */}
     </div>
   )
 }
