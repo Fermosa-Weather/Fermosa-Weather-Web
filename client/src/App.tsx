@@ -1,10 +1,12 @@
 import WeatherComponent from "./components/clima"
+import Header from "./headers/header"
 
 function App() {
 
   return (
     <>
-      <WeatherComponent></WeatherComponent>
+    <Header></Header>
+      {/* <WeatherComponent></WeatherComponent> */}
     </>
   )
 }
