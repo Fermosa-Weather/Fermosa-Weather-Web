@@ -1,14 +1,12 @@
-import { Link } from 'react-router-dom';
-import "../style/header.css"
+import "../style/header.css";
+import { Buscador } from './buscador';
+import { Navigation } from './navegation';
 
-function Header() {
+export default function Header() { 
   return (
-    <div>
-        <ul>
-        <li><Link to='/'>Inicio</Link></li>
-        </ul>
+    <div className="container">
+    <Navigation></Navigation>
+    <Buscador></Buscador>
     </div>
   )
 }
-
-export default Header
